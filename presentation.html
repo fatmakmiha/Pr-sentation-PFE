@@ -184,16 +184,29 @@
       padding: 60px 80px;
     }
 
+    /* Bande colorée gauche */
+    #s_intro::after,
+    #s_cadre::after,
+    #s_archi::after,
+    #s_real::after,
+    #s_test::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+      background: linear-gradient(180deg, #1c4ed8 0%, #c0392b 100%);
+    }
+
     /* --- Intertitres de section --- */
     #s_intro,
     #s_cadre,
     #s_archi,
-    #s_real {
+    #s_real,
+    #s_test {
       width: 1400px !important;
       height: 800px !important;
-      background: radial-gradient(circle at 80% 20%, rgba(192, 57, 43, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 15% 65%, rgba(28, 78, 216, 0.25) 0%, transparent 45%),
-        #49429f !important;
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
@@ -221,6 +234,13 @@
       left: 1500px !important;
       top: 3200px !important;
     }
+
+    #s_test {
+
+      left: 3000px !important;
+      top: 1000px !important;
+    }
+
 
     /* --- Slide 2.3 : Problématique --- */
     #s2 {
@@ -312,7 +332,6 @@
       top: 1100px !important;
       width: 1400px !important;
       height: 750px !important;
-      background: radial-gradient(circle at 80% 20%, #1a103c 0%, #0b0620 100%) !important;
       display: flex !important;
       flex-direction: column !important;
       justify-content: flex-start !important;
@@ -391,7 +410,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 60px 80px;
+      padding: 20px 20px;
     }
 
     /* ===== ZONE CONCLUSION GENERALE TRIPLE BLOCS ===== */
@@ -593,13 +612,14 @@
 
     .divider-massive-number {
       font-family: 'Montserrat', sans-serif;
-      font-size: 260px;
+      font-size: 200px;
       font-weight: 900;
-      color: #ffffff;
-      opacity: 0.04;
+      color: #d81c1c;
+      opacity: 0.07;
       line-height: 1;
+      flex-shrink: 0;
+      letter-spacing: -6px;
       user-select: none;
-      pointer-events: none;
     }
 
     .divider-text-stack {
@@ -624,16 +644,16 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 58px;
       font-weight: 800;
-      color: #ffffff;
+      color: #1c4ed8;
       line-height: 1.15;
       margin: 0 !important;
       letter-spacing: -1px;
     }
 
     .text-gradient-red {
-      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #c0392b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #1c4ed8;
+      background: none;
+      -webkit-text-fill-color: #1c4ed8;
     }
 
     .divider-refined-subtitle {
@@ -645,6 +665,46 @@
       max-width: 750px;
       font-weight: 400;
     }
+
+    .divider-chips {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .divider-chip {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .divider-chip.blue {
+      background: #eff6ff;
+      color: #1c4ed8;
+      border-color: #bfdbfe;
+    }
+
+    .divider-chip.red {
+      background: #fff1f0;
+      color: #c0392b;
+      border-color: #fecaca;
+    }
+
+    .divider-chip.green {
+      background: #f0fdf4;
+      color: #15803d;
+      border-color: #bbf7d0;
+    }
+
+
 
     /* ==========================================================================
        9. COMPOSANTS — SLIDE PLAN (Slide 1)
@@ -1280,6 +1340,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       gap: 20px;
+      align-items: center
     }
 
     .bento-card {
@@ -1403,7 +1464,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 42px;
       font-weight: 700;
-      color: #ffffff;
+      color: #0284c7;
       margin: 0 !important;
     }
 
@@ -1420,7 +1481,7 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(163, 30, 30, 0.15);
       top: 50%;
       transform: translateY(-50%);
       z-index: 1;
@@ -1479,7 +1540,7 @@
     .release-details {
       font-family: 'Open Sans', sans-serif;
       font-size: 15px;
-      color: #cbd5e1;
+      color: #707881;
       margin: 0 !important;
       font-weight: 500;
     }
@@ -1878,6 +1939,35 @@
       line-height: 1.4;
     }
 
+    /* --- Slide 5 : Tests & Validation --- */
+    #s_tests {
+      left: 3100px !important;
+      top: 4800px !important;
+      width: 1500px !important;
+      height: 780px !important;
+      background: #f8fafc !important;
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 42px 55px 35px 55px !important;
+      box-sizing: border-box !important;
+      gap: 0 !important;
+    }
+
+     #s_deploy {
+      left: 4100px !important;
+      top: 3800px !important;
+      width: 1500px !important;
+      height: 780px !important;
+      background: #f8fafc !important;
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 42px 55px 35px 55px !important;
+      box-sizing: border-box !important;
+      gap: 0 !important;
+
+
+    }
+
     /* -----------------------------------------------------------------------
        Cartes étapes de conception (slide 3.3)
        ----------------------------------------------------------------------- */
@@ -1885,9 +1975,9 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 18px;
-      margin-top: 28px;
+      margin-top: 30px;
       flex: 1;
-      align-items: stretch;
+      align-items: center;
     }
 
     .artefact-card {
@@ -2150,6 +2240,130 @@
       height: 24px;
       fill: #1c4ed8;
     }
+
+    .final-slide {
+      position: absolute;
+      background: #111622;
+      /* Fond sombre profond de votre charte */
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .final-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #111622 0%, #1a2333 100%);
+    }
+
+    /* Orbes Lumineux en Arrière-plan */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      z-index: 1;
+    }
+
+    .orb-1 {
+      top: -10%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: #ff79c6;
+      /* Une touche subtile de votre rose poudré/lumineux */
+    }
+
+    .orb-2 {
+      bottom: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: #00f2fe;
+      /* Dégradé cyan/futuriste */
+    }
+
+    /* Carte Centrale Glassmorphism */
+    .final-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 50px 80px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      animation: fadeInScale 0.8s ease-out;
+    }
+
+    /* Titre Principal */
+    .thank-you-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    /* Séparateur Minimaliste */
+    .separator {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      margin: 0 auto 20px auto;
+      border-radius: 2px;
+    }
+
+    /* Sous-titre */
+    .thank-you-subtitle {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.2rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 500;
+    }
+
+    /* Footer Discret */
+    .final-footer {
+      position: absolute;
+      bottom: 30px;
+      z-index: 2;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.85rem;
+      color: #475569;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-separator {
+      color: #334155;
+    }
+
+    /* Animation d'Entrée */
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 
@@ -2265,20 +2479,156 @@
         <div class="divider-premium-layout">
           <div class="divider-massive-number">01</div>
           <div class="divider-text-stack">
-            <h1 class="divider-main-title"><span class="text-gradient-red">Introduction</span></h1>
+            <h1 class="divider-main-title">Introduction Générale</h1>
             <p class="divider-refined-subtitle">
               Comprendre le besoin de digitalisation des processus de Qualité Totale (TQM) au sein de l'entreprise
               moderne.
             </p>
+            <div class="divider-chips">
+              <span class="divider-chip blue">Contexte</span>
+              <span class="divider-chip blue">Enjeux</span>
+            </div>
           </div>
         </div>
       </div>
 
 
+      <div class="slide" id="s_intro_content" onclick="goTo(3)"
+        style="left: 3300px; top: 1000px; width: 1400px; height: 800px; display: flex; flex-direction: column; padding: 55px 70px; box-sizing: border-box; gap: 0;">
+        <div class="slide-number">1.1</div>
+
+        <div
+          style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:18px; margin-bottom:36px;">
+          <div style="width:5px; height:40px; background:#1c4ed8; border-radius:4px; flex-shrink:0;"></div>
+          <div>
+            <h2 style="font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; color:#0f172a; margin:0;">
+              Introduction Générale
+            </h2>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:row; gap:24px; height:300px; align-items:stretch; margin: auto 0;">
+
+          <div
+            style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; border-top:4px solid #1c4ed8; border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div
+                style="width:40px; height:40px; background:#dbeafe; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1c4ed8" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#1c4ed8; letter-spacing:2px; text-transform:uppercase;">
+                  Étape 01
+                </div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#0f172a;">
+                  Accroche
+                </div>
+              </div>
+            </div>
+            <p style="font-family:'Open Sans',sans-serif; font-size:18px; color:#475569; line-height:1.65; margin:0;">
+              Les entreprises s'appuient sur des <strong style="color:#1c4ed8;">outils numériques</strong> pour gérer
+              leurs données et leurs processus.
+            </p>
+            <div style="margin-top:auto; background:#dbeafe; border-radius:10px; padding:12px 16px;">
+              <p style="font-family:'Open Sans',sans-serif; font-size:16px; color:#1e40af; margin:0; line-height:1.5;">
+                ⚠️ manque d’accès mobile en temps réel.
+              </p>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:center; flex-shrink:0; align-self:center;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#cbd5e1" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
+
+          <div
+            style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; border-top:4px solid #c0392b; border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div
+                style="width:40px; height:40px; background:#fee2e2; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#c0392b" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#c0392b; letter-spacing:2px; text-transform:uppercase;">
+                  Étape 02
+                </div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#0f172a;">
+                  Contexte &amp; Problématique
+                </div>
+              </div>
+            </div>
+            <p style="font-family:'Open Sans',sans-serif; font-size:18px; color:#475569; line-height:1.65; margin:0;">
+              <strong style="color:#c0392b;">TQM Performance</strong> est difficile à utiliser sur mobile.
+            </p>
+            <div style="margin-top:auto; background:#fee2e2; border-radius:10px; padding:12px 16px;">
+              <p style="font-family:'Open Sans',sans-serif; font-size:16px; color:#991b1b; margin:0; line-height:1.5;">
+                ❌ Usage limité en déplacement.
+              </p>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:center; flex-shrink:0; align-self:center;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#cbd5e1" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
+
+          <div
+            style="flex:1; background:#f0fdf4; border:1px solid #bbf7d0; border-top:4px solid #22c55e; border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div
+                style="width:40px; height:40px; background:#dcfce7; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#22c55e; letter-spacing:2px; text-transform:uppercase;">
+                  Étape 03
+                </div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#0f172a;">
+                  Solution Proposée
+                </div>
+              </div>
+            </div>
+            <p style="font-family:'Open Sans',sans-serif; font-size:18px; color:#475569; line-height:1.65; margin:0;">
+              Développer une application mobile TQM Performance.
+            </p>
+            <div style="margin-top:auto; background:#dcfce7; border-radius:10px; padding:12px 16px;">
+              <p style="font-family:'Open Sans',sans-serif; font-size:16px; color:#15803d; margin:0; line-height:1.5;">
+                ✔ Simple<br>
+                ✔ Mobile<br>
+                ✔ Synchronisée &amp; offline
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
       <!-- =====================================================================
            INTERTITRE 02 : CADRE DU PROJET
            ===================================================================== -->
-      <div id="s_cadre" class="slide section-divider-slide" onclick="goTo(3)">
+      <div id="s_cadre" class="slide section-divider-slide" onclick="goTo(4)">
         <div class="divider-premium-layout">
           <div class="divider-massive-number">02</div>
           <div class="divider-text-stack">
@@ -2287,6 +2637,12 @@
               Comprendre le besoin de digitalisation des processus de Qualité Totale (TQM) au sein de l'entreprise
               moderne.
             </p>
+            <div class="divider-chips">
+              <span class="divider-chip blue">Karray Group</span>
+              <span class="divider-chip green">TQM Performance Web</span>
+              <span class="divider-chip red">Problématique</span>
+              <span class="divider-chip green">Solution</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2295,7 +2651,7 @@
       <!-- =====================================================================
            SLIDE 2.1 : PRÉSENTATION DE L'ENTREPRISE (KARRAY)
            ===================================================================== -->
-      <div class="slide" id="s_karray" onclick="goTo(4)">
+      <div class="slide" id="s_karray" onclick="goTo(5)">
         <div class="slide-number">2.1</div>
 
         <div>
@@ -2313,11 +2669,9 @@
 
             <div class="karray-card-clean" style="padding:22px 24px;">
               <div
-                style="width:54px; height:54px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
-                <svg viewBox="0 0 100 100" style="width:44px; height:44px;">
-                  <path d="M20 10 L45 10 L45 90 L20 90 Z" fill="#1e293b" />
-                  <path d="M45 50 L80 10 L105 10 L65 50 L105 90 L80 90 Z" fill="#c0392b" />
-                </svg>
+                style="width:80px; height:54px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+                <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781431385/icon_karray_dp96db.png"
+                  alt="Logo Karray Group" style="width:100%; height:auto; object-fit:contain;">
               </div>
               <div class="karray-card-text">
                 <h4 style="font-size:22px; letter-spacing:0.5px;">KARRAY GROUP</h4>
@@ -2417,7 +2771,7 @@
       <!-- =====================================================================
            SLIDE 2.2 : ÉTUDE DE L'EXISTANT
            ===================================================================== -->
-      <div class="slide" id="s_existant" onclick="goTo(5)">
+      <div class="slide" id="s_existant" onclick="goTo(6)">
         <div class="slide-number">2.2</div>
 
         <div class="karray-top-label">Cadre du projet</div>
@@ -2515,7 +2869,7 @@
       <!-- =====================================================================
            SLIDE 2.3 : PROBLÉMATIQUE
            ===================================================================== -->
-      <div class="slide" id="s2" onclick="goTo(6)">
+      <div class="slide" id="s2" onclick="goTo(7)">
         <div class="slide-number">2.3</div>
 
         <div>
@@ -2631,7 +2985,7 @@
       <!-- =====================================================================
            SLIDE 2.4 : SOLUTION PROPOSÉE
            ===================================================================== -->
-      <div class="slide" id="s_solution" onclick="goTo(7)">
+      <div class="slide" id="s_solution" onclick="goTo(8)">
         <div class="slide-number">2.4</div>
 
         <div>
@@ -2690,8 +3044,7 @@
                   <span class="bento-tag">Terrain</span>
                 </div>
                 <h4>Module Audit</h4>
-                <p>Réalisation d'audits, saisie déconnectée et génération instantanée de rapports de synthèse au format
-                  PDF.</p>
+
               </div>
 
               <div class="bento-card">
@@ -2705,8 +3058,7 @@
                   <span class="bento-tag">Suivi</span>
                 </div>
                 <h4>Suivi des Actions</h4>
-                <p>Vue en temps réel sur l'avancement et gestion complète du cycle de vie des actions correctives et
-                  préventives.</p>
+
               </div>
 
               <div class="bento-card">
@@ -2720,8 +3072,7 @@
                   <span class="bento-tag">KPI</span>
                 </div>
                 <h4>Tableau de Bord</h4>
-                <p>Synthèse et visualisation claire des indicateurs clés de performance pour des décisions rapides en
-                  mobilité.</p>
+
               </div>
 
               <div class="bento-card">
@@ -2735,8 +3086,7 @@
                   <span class="bento-tag red-tag">Urgent</span>
                 </div>
                 <h4>Module Alertes</h4>
-                <p>Notifications prioritaires en temps réel et flux personnalisé pour ne manquer aucune action critique.
-                </p>
+
               </div>
             </div>
           </div>
@@ -2747,7 +3097,7 @@
       <!-- =====================================================================
            INTERTITRE 03 : ARCHITECTURE ,Technologie ET MÉTHODOLOGIE
            ===================================================================== -->
-      <div id="s_archi" class="slide section-divider-slide" onclick="goTo(8)">
+      <div id="s_archi" class="slide section-divider-slide" onclick="goTo(9)">
         <div class="divider-premium-layout">
           <div class="divider-massive-number">03</div>
           <div class="divider-text-stack">
@@ -2757,6 +3107,11 @@
               Présenter les choix technologiques, l'architecture logicielle et la démarche méthodologique adoptée pour
               la réalisation du projet.
             </p>
+            <div class="divider-chips">
+              <span class="divider-chip blue">React Native</span>
+              <span class="divider-chip blue">API REST</span>
+              <span class="divider-chip green">XP Agile</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2765,9 +3120,14 @@
       <!-- =====================================================================
            SLIDE 3.1 : ARCHITECTURE & TECHNOLOGIES
            ===================================================================== -->
-      <div class="slide" id="s3" onclick="goTo(9)">
+      <div class="slide" id="s3" onclick="goTo(10)">
         <div class="slide-number">3.1</div>
         <div style="flex:1;">
+          <div
+            style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#1c4ed8; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">
+            Architecture, technologies et méthodologie de travail</div>
+          <div style="width:60px; height:4px; background:#c0392b; margin:24px 0;"></div>
+
           <div class="slide-title">Architecture &amp;<br><span class="text-blue">Technologies</span></div>
           <div style="width:60px; height:4px; background:#c0392b; margin:24px 0;"></div>
           <div class="slide-body">
@@ -2803,7 +3163,7 @@
       <!-- =====================================================================
            SLIDE 3.2 : MÉTHODOLOGIE — EXTREME PROGRAMMING (XP)
            ===================================================================== -->
-      <div class="slide" id="s3_3" onclick="goTo(10)">
+      <div class="slide" id="s3_3" onclick="goTo(11)">
 
         <div class="slide-number">3.2</div>
 
@@ -2815,6 +3175,7 @@
             <div style="width:60px; height:4px; background:#c0392b; margin:24px 0;"></div>
 
             <div class="slide-title">Méthodologie :<br><span class="text-blue">Extreme Programming (XP)</span></div>
+            <div style="width:60px; height:4px; background:#c0392b; margin:24px 0;"></div>
 
           </div>
           <div class="slide-body" style="max-width:550px; margin-bottom:25px;">
@@ -2895,27 +3256,33 @@
       </div>
 
 
-      
+
       <!-- =====================================================================
            INTERTITRE 04 : RÉALISATION ET DÉMONSTRATION
            ===================================================================== -->
-      <div id="s_real" class="slide section-divider-slide" onclick="goTo(11)">
+      <div id="s_real" class="slide section-divider-slide" onclick="goTo(12)">
         <div class="divider-premium-layout">
           <div class="divider-massive-number">04</div>
           <div class="divider-text-stack">
-            <h1 class="divider-main-title"><span class="text-gradient-red">Conception et Réalisation des Modules Clés</span></h1>
+            <h1 class="divider-main-title"><span class="text-gradient-red">Conception et Réalisation des Modules
+                Clés</span></h1>
             <p class="divider-refined-subtitle">
               Présenter le découpage chronologique du projet et la planification des livraisons successives adoptée pour
               la réalisation progressive de l'application.
             </p>
+            <div class="divider-chips">
+              <span class="divider-chip blue">5 Modules</span>
+              <span class="divider-chip green">5 Releases</span>
+              <span class="divider-chip red">Offline</span>
+            </div>
           </div>
         </div>
       </div>
 
-<!-- =====================================================================
+      <!-- =====================================================================
            SLIDE 3.3 : ARTEFACTS DE CONCEPTION
            ===================================================================== -->
-      <div class="slide" id="s3_conception" onclick="goTo(12)">
+      <div class="slide" id="s3_conception" onclick="goTo(13)">
         <div class="slide-number">4.1</div>
 
         <!-- En-tête -->
@@ -2971,6 +3338,8 @@
             <div class="artefact-tags">
               <span class="artefact-tag tag-uc">UML</span>
               <span class="artefact-tag tag-uc">Fonctionnel</span>
+              <span class="artefact-tag tag-seq">Draw.io</span>
+
             </div>
           </div>
 
@@ -2994,6 +3363,8 @@
             <div class="artefact-tags">
               <span class="artefact-tag tag-cls">UML</span>
               <span class="artefact-tag tag-cls">MVC</span>
+              <span class="artefact-tag tag-seq">Draw.io</span>
+
             </div>
           </div>
 
@@ -3018,6 +3389,8 @@
             <div class="artefact-tags">
               <span class="artefact-tag tag-seq">UML</span>
               <span class="artefact-tag tag-seq">PlantUML</span>
+              <span class="artefact-tag tag-seq">Draw.io</span>
+
             </div>
           </div>
 
@@ -3046,7 +3419,7 @@
 
         <!-- Barre de flux linéaire -->
         <div
-          style="display:flex; align-items:center; justify-content:center; gap:0; margin-top:22px; padding:14px 20px; background:#f1f5f9; border-radius:12px; border:1px solid #e2e8f0;">
+          style="display:flex; align-items:center; justify-content:center; gap:0; margin-top:10px; padding:14px 20px; background:#f1f5f9; border-radius:12px; border:1px solid #e2e8f0;">
           <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:#3b82f6;">US</span>
           <span style="color:#cbd5e1; margin:0 10px; font-size:16px;">→</span>
 
@@ -3077,14 +3450,25 @@
       <!-- =====================================================================
            SLIDE 4.1 : PLANNING DE RÉALISATION
            ===================================================================== -->
-      <div class="slide" id="s_planning" onclick="goTo(13)">
+      <div class="slide" id="s_planning" onclick="goTo(14)">
         <div class="slide-number">4.2</div>
 
         <div class="planning-container">
-          <div class="planning-header">
-            <div class="planning-accent-bar"></div>
-            <h2 class="planning-title">Planning de Réalisation</h2>
+          <div
+            style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:16px;">
+            <div style="width:5px; height:38px; background:#1c4ed8; border-radius:4px; flex-shrink:0;"></div>
+            <div>
+              <div
+                style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#1c4ed8; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">
+                Conception et Réalisation des Modules Clés</div>
+              <h2
+                style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; color:#0f172a; margin:0;">
+                Planning de Réalisation</h2>
+            </div>
+
           </div>
+
+
 
           <div class="timeline-wrapper">
             <div class="timeline-line"></div>
@@ -3144,7 +3528,7 @@
       <!-- =====================================================================
            SLIDE 4.4 : MODULE 1 — AUTHENTIFICATION
            ===================================================================== -->
-      <div class="slide" id="s6" onclick="goTo(14)">
+      <div class="slide" id="s6" onclick="goTo(15)">
         <div class="slide-number">4.3</div>
 
         <div class="module-layout-container">
@@ -3190,7 +3574,7 @@
       <!-- =====================================================================
            SLIDE 4.5 : MODULE 2 — GESTION DES AUDITS
            ===================================================================== -->
-      <div class="slide" id="s7" onclick="goTo(16)">
+      <div class="slide" id="s7" onclick="goTo(17)">
         <div class="slide-number">4.4</div>
 
         <div class="module-layout-container" style="flex-direction:row-reverse;">
@@ -3232,7 +3616,7 @@
       <!-- =====================================================================
            SLIDE 4.6 : MODULE 3 — GESTION DES ACTIONS
            ===================================================================== -->
-      <div class="slide" id="s8" onclick="goTo(18)">
+      <div class="slide" id="s8" onclick="goTo(19)">
         <div class="slide-number">4.5</div>
 
         <div class="module-layout-container">
@@ -3278,7 +3662,7 @@
       <!-- =====================================================================
            SLIDE 4.7 : MODULE 4 — ALERTES & AGENDA
            ===================================================================== -->
-      <div class="slide" id="s9" onclick="goTo(20)">
+      <div class="slide" id="s9" onclick="goTo(21)">
         <div class="slide-number">4.6</div>
 
         <div class="module-layout-container" style="flex-direction:row-reverse;">
@@ -3323,7 +3707,7 @@
       <!-- =====================================================================
            SLIDE 4.8 : MODULE 5 — TABLEAU DE BORD
            ===================================================================== -->
-      <div class="slide" id="s10" onclick="goTo(22)">
+      <div class="slide" id="s10" onclick="goTo(23)">
         <div class="slide-number">4.7</div>
 
         <div class="module-layout-container">
@@ -3361,11 +3745,217 @@
         </div>
       </div>
 
+      <!-- =====================================================================
+           SLIDE 5 : TESTS, VALIDATION & DÉPLOIEMENT
+           ===================================================================== -->
+      <div class="slide" id="s_tests" onclick="goTo(25)">
+        <div class="slide-number" style="font-size:64px; opacity:0.08;">05</div>
+
+        <div
+          style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:16px; margin-bottom:28px;">
+          <div style="width:5px; height:38px; background:#c0392b; border-radius:4px; flex-shrink:0;"></div>
+          <div>
+            <div
+              style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#c0392b; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:4px;">
+              Chapitre 05</div>
+            <h2
+              style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; color:#0f172a; margin:0; line-height:1.2;">
+              Tests, Validation &amp; Déploiement</h2>
+          </div>
+          <div
+            style="margin-left:auto; background:#f0fdf4; border:1.5px solid #22c55e; border-radius:12px; padding:10px 22px; display:flex; align-items:center; gap:10px; flex-shrink:0;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#15803d;">Tous les
+              cas validés</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:row; gap:22px; height:480px; align-items:stretch;">
+
+          <div
+            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #3b82f6; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+              <div
+                style="width:38px; height:38px; background:#dbeafe; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3b82f6" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#3b82f6; letter-spacing:1.5px; text-transform:uppercase;">
+                  Types de tests</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
+                  Réalisés</div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px; flex:1;">
+              <div
+                style="display:flex; align-items:center; gap:12px; background:#f8fafc; border-radius:10px; padding:12px 14px; border-left:3px solid #3b82f6;">
+                <span style="font-size:16px;">✅</span>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
+                    Tests fonctionnels</div>
+                  <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:2px;">
+                    Vérification de chaque fonctionnalité métier</div>
+                </div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:12px; background:#f8fafc; border-radius:10px; padding:12px 14px; border-left:3px solid #8b5cf6;">
+                <span style="font-size:16px;">✅</span>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
+                    Tests de robustesse</div>
+                  <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:2px;">
+                    Comportement face aux erreurs &amp; cas limites</div>
+                </div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:12px; background:#f8fafc; border-radius:10px; padding:12px 14px; border-left:3px solid #22c55e;">
+                <span style="font-size:16px;">✅</span>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
+                    Tests d'intégration</div>
+                  <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:2px;">API
+                    REST ↔ Mobile ↔ MySQL, mode hors-ligne</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #f97316; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+              <div
+                style="width:38px; height:38px; background:#ffedd5; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f97316" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" />
+                  <line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#f97316; letter-spacing:1.5px; text-transform:uppercase;">
+                  Environnement</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">De
+                  test</div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:14px; flex:1;">
+              <div
+                style="display:flex; align-items:flex-start; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
+                <span style="font-size:22px; flex-shrink:0;">📱</span>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
+                    Smartphones Android réels</div>
+                  <div
+                    style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:3px; line-height:1.5;">
+                    Tests sur appareils physiques, différentes résolutions &amp; versions Android</div>
+                </div>
+              </div>
+              <div
+                style="display:flex; align-items:flex-start; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
+                <span style="font-size:22px; flex-shrink:0;">🔄</span>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
+                    Scénarios variés</div>
+                  <div
+                    style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:3px; line-height:1.5;">
+                    Connexion active, perte de réseau, reprise offline, données volumineuses</div>
+                </div>
+              </div>
+              <div
+                style="display:flex; align-items:flex-start; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
+                <span style="font-size:22px; flex-shrink:0;">🔁</span>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
+                    Campagnes itératives</div>
+                  <div
+                    style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:3px; line-height:1.5;">
+                    Tests réalisés à chaque release selon la méthodologie XP</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #22c55e; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+              <div
+                style="width:38px; height:38px; background:#dcfce7; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#22c55e; letter-spacing:1.5px; text-transform:uppercase;">
+                  Résultats</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
+                  Obtenus</div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px;">
+              <div
+                style="display:flex; align-items:center; gap:10px; background:#f0fdf4; border-radius:10px; padding:12px 14px;">
+                <div style="width:8px; height:8px; background:#22c55e; border-radius:50%; flex-shrink:0;"></div>
+                <div style="font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600; color:#166534;">Tous
+                  les cas de test validés</div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:10px; background:#f0fdf4; border-radius:10px; padding:12px 14px;">
+                <div style="width:8px; height:8px; background:#22c55e; border-radius:50%; flex-shrink:0;"></div>
+                <div style="font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600; color:#166534;">
+                  Aucune anomalie bloquante détectée</div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:10px; background:#f0fdf4; border-radius:10px; padding:12px 14px;">
+                <div style="width:8px; height:8px; background:#22c55e; border-radius:50%; flex-shrink:0;"></div>
+                <div style="font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600; color:#166534;">
+                  Fonctionnement conforme aux besoins</div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto;">
+              <div style="background:#0f172a; border-radius:10px; padding:14px; text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#22c55e;">90%
+                </div>
+                <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#94a3b8; margin-top:2px;">Cas
+                  validés</div>
+              </div>
+              <div style="background:#0f172a; border-radius:10px; padding:14px; text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#3b82f6;">10%
+                </div>
+                <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#94a3b8; margin-top:2px;">Anomalie
+                  bloquante</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="speaker-notes-banner"
+          style="position:relative; bottom:auto; left:auto; right:auto; margin-top:22px;">
+          <span class="notes-badge">Note</span>
+          <p class="notes-content">Plusieurs campagnes de tests ont été effectuées afin de vérifier la stabilité, la
+            fiabilité et la conformité de l'application aux exigences définies. Les tests ont couvert l'ensemble des
+            modules : authentification, audits, actions, alertes &amp; tableau de bord, en conditions réelles sur
+            appareil Android.</p>
+        </div>
+      </div>
+
+
 
       <!-- =====================================================================
            SLIDE 11 : CONCLUSION GENERALE & PERSPECTIVES
            ===================================================================== -->
-      <div class="slide" id="s11" onclick="goTo(24)">
+      <div class="slide" id="s11" onclick="goTo(27)">
         <div class="slide-number">11</div>
 
         <div class="conclusion-container">
@@ -3377,13 +3967,13 @@
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#1c4ed8;"></div>
               <div class="bullet-text"><strong>Richesse fonctionnelle :</strong> Formulaires dynamiques, génération
-                automatique de rapports PDF, alertes temps réel et KPI interactifs.</div>
+                automatique de rapports PDF.</div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#1c4ed8;"></div>
               <div class="bullet-text"><strong>Digitalisation complète :</strong> Suppression définitive du papier,
-                améliorant la traçabilité, l’accessibilité et la fiabilité des données.</div>
+                améliorant la traçabilité </div>
             </div>
 
             <div class="bullet-item">
@@ -3456,10 +4046,215 @@
 
       </div>
 
+
+      <div class="slide" id="s_deploy" onclick="goTo(28)">
+        <div class="slide-number" style="font-size:64px; opacity:0.08;">06</div>
+
+        <div
+          style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:16px; margin-bottom:28px;">
+          <div style="width:5px; height:38px; background:#c0392b; border-radius:4px; flex-shrink:0;"></div>
+          <div>
+            <div
+              style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#c0392b; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:4px;">
+              Chapitre 05
+            </div>
+            <h2
+              style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; color:#0f172a; margin:0; line-height:1.2;">
+              Déploiement de l'Application
+            </h2>
+          </div>
+          <div
+            style="margin-left:auto; background:#e0f2fe; border:1.5px solid #0284c7; border-radius:12px; padding:10px 22px; display:flex; align-items:center; gap:10px; flex-shrink:0;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0284c7" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+            <span style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#0369a1;">Build de
+              Production OK</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:row; gap:22px; height:480px; align-items:stretch;">
+
+          <div
+            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #0284c7; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+              <div
+                style="width:38px; height:38px; background:#e0f2fe; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0284c7" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#0284c7; letter-spacing:1px; text-transform:uppercase;">
+                  Environnement</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">&amp;
+                  Sécurisation</div>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:12px; flex:1;">
+              <div style="background:#f8fafc; border-radius:10px; padding:14px; border-left:3px solid #0284c7;">
+                <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#1e293b;">
+                  Architecture Client-Serveur</div>
+                <div
+                  style="font-family:'Open Sans',sans-serif; font-size:15px; color:#64748b; margin-top:2px; line-height:1.4;">
+                  <strong>Backend (PHP/MySQL) :</strong> Hébergé localement sur IP fixe au sein du réseau d'entreprise.
+                </div>
+              </div>
+              <div style="background:#f8fafc; border-radius:10px; padding:14px; border-left:3px solid #f59e0b;">
+                <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#1e293b;">
+                  Signature de l'APK (Keystore)</div>
+                <div
+                  style="font-family:'Open Sans',sans-serif; font-size:14px; color:#64748b; margin-top:2px; line-height:1.4;">
+                  Configuration sécurisée dans <code>build.gradle</code> avec certificat release pour garantir
+                  l'authenticité de l'application.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #6366f1; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+              <div
+                style="width:38px; height:38px; background:#e0e7ff; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#6366f1" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#6366f1; letter-spacing:1px; text-transform:uppercase;">
+                  Génération</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
+                  Fichier APK</div>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:14px; flex:1;">
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#475569; margin-bottom:6px;">
+                  Commande de compilation Gradle :</div>
+                <div
+                  style="background:#0f172a; border-radius:8px; padding:12px 14px; font-family:'Courier New',Courier,monospace; font-size:14px; color:#38bdf8; font-weight:bold; border-left:4px solid #6366f1; word-break:break-all;">
+                  cd android &amp;&amp; ./gradlew assembleRelease
+                </div>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#475569; margin-bottom:6px;">
+                  Emplacement de l'artefact livré :</div>
+                <div
+                  style="background:#f1f5f9; border-radius:8px; padding:10px 12px; font-family:'Courier New',Courier,monospace; font-size:12.5px; color:#475569; border:1px dashed #cbd5e1; word-break:break-all;">
+                  outputs/apk/release/app-release.apk
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #22c55e; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+              <div
+                style="width:38px; height:38px; background:#dcfce7; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div>
+                <div
+                  style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#22c55e; letter-spacing:1px; text-transform:uppercase;">
+                  Validation</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">Sur
+                  Appareils</div>
+              </div>
+            </div>
+
+            <div style="flex:1;">
+              <table
+                style="width:100%; border-collapse:collapse; font-family:'Open Sans',sans-serif; font-size:14px; text-align:left;">
+                <thead>
+                  <tr style="border-bottom:2px solid #e2e8f0; color:#475569; font-weight:bold;">
+                    <th style="padding:10px 6px; font-family:'Montserrat',sans-serif;">Appareil</th>
+                    <th style="padding:10px 6px; font-family:'Montserrat',sans-serif;">Version OS</th>
+                    <th style="padding:10px 6px; text-align:right; font-family:'Montserrat',sans-serif;">Résultat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid #f1f5f9;">
+                    <td style="padding:12px 6px; font-weight:600; color:#1e293b;">Samsung Galaxy A24</td>
+                    <td style="padding:12px 6px; color:#64748b;">Android 14</td>
+                    <td style="padding:12px 6px; text-align:right; color:#16803d; font-weight:bold;">✨ Validé</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f1f5f9;">
+                    <td style="padding:12px 6px; font-weight:600; color:#1e293b;">Infinix NOTE 8</td>
+                    <td style="padding:12px 6px; color:#64748b;">Android 10</td>
+                    <td style="padding:12px 6px; text-align:right; color:#16803d; font-weight:bold;">✨ Validé</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div
+                style="margin-top:16px; background:#f0fdf4; border-radius:8px; padding:10px 12px; border:1px solid #bbf7d0; font-size:13px; color:#166534; line-height:1.4;">
+                ✔ Installation et exécution de production fluides, confirmant la stabilité et la rétrocompatibilité du
+                build.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="speaker-notes-banner"
+          style="position:relative; bottom:auto; left:auto; right:auto; margin-top:22px;">
+          <span class="notes-badge">Note</span>
+          <p class="notes-content">
+            Pour finaliser le cycle de développement, nous avons procédé au build de production de l'application TQM
+            Performance. L'APK a été généré via Gradle Release, signé numériquement par Keystore et validé avec succès
+            sur un panel de smartphones physiques représentatifs du parc d'utilisateurs.
+          </p>
+        </div>
+      </div>
+
+      <!-- remerciment -->
+
+      <div id="slide-conclusion" class="slide" onclick="goTo(29)"
+        style="top: 3600px; left: 6400px; width: 1024px; height: 576px;">
+        <div class="final-container">
+
+          <div class="glow-orb orb-1"></div>
+          <div class="glow-orb orb-2"></div>
+
+          <div class="final-card">
+            <h1 class="thank-you-title">Merci pour votre attention</h1>
+            <div class="separator"></div>
+            <p class="thank-you-subtitle">Fin de la présentation</p>
+          </div>
+
+          <div class="final-footer">
+            <span>TQM Performance</span>
+            <span class="footer-separator">•</span>
+            <span>PFE 2025-2026</span>
+          </div>
+
+        </div>
+      </div>
+
       <!-- =====================================================================
            SLIDE GAL-1 : GALERIE AUTHENTIFICATION
            ===================================================================== -->
-      <div class="slide gallery-slide" id="s6_gal" onclick="goTo(15)"> <!-- idx 15 ✓ -->
+      <div class="slide gallery-slide" id="s6_gal" onclick="goTo(16)"> <!-- idx 15 ✓ -->
         <div class="gallery-header">
           <span class="gallery-module-tag">Module 1</span>
           <h2 class="gallery-title">Authentification — Autres interfaces</h2>
@@ -3487,7 +4282,7 @@
       <!-- =====================================================================
            SLIDE GAL-2 : GALERIE GESTION DES AUDITS
            ===================================================================== -->
-      <div class="slide gallery-slide" id="s7_gal" onclick="goTo(17)"> <!-- idx 17 ✓ -->
+      <div class="slide gallery-slide" id="s7_gal" onclick="goTo(18)"> <!-- idx 17 ✓ -->
         <div class="gallery-header">
           <span class="gallery-module-tag" style="background:#3cbfa3;">Module 2</span>
           <h2 class="gallery-title">Gestion des Audits — Autres interfaces</h2>
@@ -3505,16 +4300,17 @@
             <span class="gallery-item-desc">Interface de réalisation d’audit</span>
           </div>
           <div class="gallery-item">
-            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781361406/reinitialiser_ntftqf.png"
-              alt="Audit Form">
-            <span class="gallery-item-label">AuditFormScreen</span>
-            <span class="gallery-item-desc">Réinitialisation Audit</span>
-          </div>
-          <div class="gallery-item">
             <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781361399/8_bndug7.png" alt="Audit Detail">
             <span class="gallery-item-label">AuditReportScreen</span>
             <span class="gallery-item-desc">Interface de synthèse et rapport</span>
           </div>
+          <div class="gallery-item">
+            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781361391/rapport_qnai8o.png"
+              alt="Audit Form">
+            <span class="gallery-item-label">AuditReportScreen</span>
+            <span class="gallery-item-desc">Rapport Audit PDF</span>
+          </div>
+
 
         </div>
       </div>
@@ -3523,7 +4319,7 @@
       <!-- =====================================================================
            SLIDE GAL-3 : GALERIE GESTION DES ACTIONS
            ===================================================================== -->
-      <div class="slide gallery-slide" id="s8_gal" onclick="goTo(19)"> <!-- idx 19 ✓ -->
+      <div class="slide gallery-slide" id="s8_gal" onclick="goTo(20)"> <!-- idx 19 ✓ -->
         <div class="gallery-header">
           <span class="gallery-module-tag" style="background:#0284c7;">Module 3</span>
           <h2 class="gallery-title">Gestion des Actions — Autres interfaces</h2>
@@ -3551,7 +4347,7 @@
       <!-- =====================================================================
            SLIDE GAL-4 : GALERIE ALERTES & AGENDA
            ===================================================================== -->
-      <div class="slide gallery-slide" id="s9_gal" onclick="goTo(21)"> <!-- idx 21 ✓ -->
+      <div class="slide gallery-slide" id="s9_gal" onclick="goTo(22)"> <!-- idx 21 ✓ -->
         <div class="gallery-header">
           <span class="gallery-module-tag" style="background:#ef4444;">Module 4</span>
           <h2 class="gallery-title">Alertes &amp; Agenda — Autres interfaces</h2>
@@ -3589,14 +4385,14 @@
       <!-- =====================================================================
            SLIDE GAL-5 : GALERIE TABLEAU DE BORD
            ===================================================================== -->
-      <div class="slide gallery-slide" id="s10_gal" onclick="goTo(23)"> <!-- idx 23 ✓ -->
+      <div class="slide gallery-slide" id="s10_gal" onclick="goTo(24)"> <!-- idx 23 ✓ -->
         <div class="gallery-header">
           <span class="gallery-module-tag" style="background:#d97706;">Module 5</span>
           <h2 class="gallery-title">Tableau de Bord — Autres interfaces</h2>
         </div>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781301601/sous_tableau_tlbyov.png"
+            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781374628/sous_tableau_umd31q.png"
               alt="Dashboard">
             <span class="gallery-item-label">DashboardScreen</span>
             <span class="gallery-item-desc">Interface de la liste des sous tableaux de bord</span>
@@ -3616,6 +4412,25 @@
         </div>
       </div>
 
+      <!-- =====================================================================
+           INTERTITRE 05 :  Tests, Validation et Déploiement
+           ===================================================================== -->
+      <div id="s_test" class="slide section-divider-slide" onclick="goTo(26)">
+        <div class="divider-premium-layout">
+          <div class="divider-massive-number">05</div>
+          <div class="divider-text-stack">
+            <h1 class="divider-main-title"><span class="text-gradient-red"> Tests, Validation et Déploiement</span></h1>
+            <p class="divider-refined-subtitle">
+              Assurer le bon fonctionnement, la qualité et la mise en service de l'application mobile TQM Performance.
+            </p>
+            <div class="divider-chips">
+              <span class="divider-chip green">100% validés</span>
+              <span class="divider-chip blue">Android réel</span>
+              <span class="divider-chip blue">XP itératif</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div><!-- /#world -->
   </div><!-- /#canvas -->
@@ -3646,6 +4461,7 @@
       { id: 's0', left: 2200, top: 1400, w: 1600, h: 900 },  //  0 – Couverture
       { id: 's1', left: 500, top: 1500, w: 1300, h: 800 },  //  1 – Plan
       { id: 's_intro', left: 3300, top: 100, w: 1400, h: 800 },  //  2 – § Introduction
+      { id: 's_intro_content', left: 3300, top: 1000, w: 1400, h: 800 }, //  3  ← NOUVEAU
       { id: 's_cadre', left: 1700, top: 2800, w: 1400, h: 800 },  //  3 – § Cadre du projet
       { id: 's_karray', left: 2700, top: 2600, w: 1400, h: 700 },  //  4 – 2.1 Karray
       { id: 's_existant', left: 1600, top: 1100, w: 1400, h: 750 },  //  5 – 2.2 Existant
@@ -3655,8 +4471,7 @@
       { id: 's3', left: 2900, top: 2600, w: 1400, h: 750 },  //  9 – 3.1 Architecture
       { id: 's3_3', left: 1900, top: 1600, w: 1400, h: 750 },  // 10 – 3.2 Méthodologie XP
       { id: 's_real', left: 1500, top: 3200, w: 1400, h: 750 },  // 12 – § Réalisation
-            { id: 's3_conception', left: 3300, top: 1600, w: 1400, h: 750 },  // 11 – 3.3 Artefacts conception ← NEW
-
+      { id: 's3_conception', left: 3300, top: 1600, w: 1400, h: 750 },  // 11 – 3.3 Artefacts conception ← NEW
       { id: 's_planning', left: 4800, top: 1100, w: 1400, h: 750 },  // 13 – 4.1 Planning
       { id: 's6', left: 3400, top: 1100, w: 1300, h: 680 },  // 14 – Module 1 : Auth
       { id: 's6_gal', left: 600, top: 3500, w: 1300, h: 700 },  // 15 – Galerie Auth
@@ -3668,7 +4483,12 @@
       { id: 's9_gal', left: 2000, top: 4300, w: 1300, h: 650 },  // 21 – Galerie Alertes
       { id: 's10', left: 3400, top: 3400, w: 1200, h: 650 },  // 22 – Module 5 : Dashboard
       { id: 's10_gal', left: 4700, top: 3300, w: 1300, h: 700 },  // 23 – Galerie Dashboard
-      { id: 's11', left: 3200, top: 4300, w: 1200, h: 650 },  // 24 – Conclusion
+      { id: 's_test', left: 3000, top: 1000, w: 1600, h: 900 },  //  24 – § Tests, Validation et Déploiement
+      { id: 's_tests', left: 3100, top: 4800, w: 1600, h: 900 },  //  24 – § Tests, Validation et Déploiement
+      { id: 's_deploy', left: 4100, top: 3800, w: 1600, h: 900 },  //  24 – § Tests, Validation et Déploiement
+
+      { id: 's11', left: 3200, top: 4300, w: 1200, h: 650 },  // 25 – Conclusion
+      { id: 'slide-conclusion', left: 6400, top: 3600, w: 1024, h: 576 },
     ];
 
     let current = 0;
