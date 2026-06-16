@@ -1953,7 +1953,7 @@
       gap: 0 !important;
     }
 
-     #s_deploy {
+    #s_deploy {
       left: 4100px !important;
       top: 3800px !important;
       width: 1500px !important;
@@ -2240,130 +2240,119 @@
       height: 24px;
       fill: #1c4ed8;
     }
+.final-slide {
+    position: absolute;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+  }
 
-    .final-slide {
-      position: absolute;
-      background: #111622;
-      /* Fond sombre profond de votre charte */
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      font-family: 'Montserrat', sans-serif;
+  .final-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Léger dégradé du blanc vers un bleu/gris très doux */
+    background: linear-gradient(135deg, #ffffff 0%, #f4f7fa 100%);
+  }
+
+  /* Halos colorés très discrets en arrière-plan */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35; /* Légèrement plus visible sur fond clair */
+    z-index: 1;
+    mix-blend-mode: multiply; /* Fusionne proprement avec le fond blanc */
+  }
+
+  .orb-1 {
+    top: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: #e0f2fe; /* Bleu ciel très doux */
+  }
+
+  .orb-2 {
+    bottom: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: #fae8ff; /* Rose/Violet très pastel */
+  }
+
+  /* Style Minimaliste Central (Plus besoin de gros glassmorphism) */
+  .final-card {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Titre Principal Noir Intense / Anthracite */
+  .thank-you-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0f172a; /* Bleu nuit presque noir, très premium */
+    margin-bottom: 24px;
+  }
+
+  /* Séparateur Lumineux et Net */
+  .separator {
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8); /* Dégradé bleu/indigo pro */
+    margin: 0 auto 24px auto;
+    border-radius: 10px;
+  }
+
+  /* Sous-titre Gris Soft */
+  .thank-you-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05rem;
+    color: #64748b; /* Gris ardoise élégant */
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 600;
+  }
+
+  /* Footer Discret en Bas */
+  .final-footer {
+    position: absolute;
+    bottom: 70px;
+    z-index: 2;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-separator {
+    color: #cbd5e1;
+  }
+
+  /* Animation fluide de bas en haut */
+  @keyframes slideUpFade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-
-    .final-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #111622 0%, #1a2333 100%);
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    /* Orbes Lumineux en Arrière-plan */
-    .glow-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.15;
-      z-index: 1;
-    }
-
-    .orb-1 {
-      top: -10%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
-      background: #ff79c6;
-      /* Une touche subtile de votre rose poudré/lumineux */
-    }
-
-    .orb-2 {
-      bottom: -10%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: #00f2fe;
-      /* Dégradé cyan/futuriste */
-    }
-
-    /* Carte Centrale Glassmorphism */
-    .final-card {
-      position: relative;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 50px 80px;
-      border-radius: 24px;
-      text-align: center;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-      animation: fadeInScale 0.8s ease-out;
-    }
-
-    /* Titre Principal */
-    .thank-you-title {
-      font-size: 3.2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-
-    /* Séparateur Minimaliste */
-    .separator {
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, #00f2fe, #4facfe);
-      margin: 0 auto 20px auto;
-      border-radius: 2px;
-    }
-
-    /* Sous-titre */
-    .thank-you-subtitle {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.2rem;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-weight: 500;
-    }
-
-    /* Footer Discret */
-    .final-footer {
-      position: absolute;
-      bottom: 30px;
-      z-index: 2;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.85rem;
-      color: #475569;
-      letter-spacing: 1.5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-separator {
-      color: #334155;
-    }
-
-    /* Animation d'Entrée */
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+  }
   </style>
 </head>
 
@@ -2485,8 +2474,12 @@
               moderne.
             </p>
             <div class="divider-chips">
-              <span class="divider-chip blue">Contexte</span>
-              <span class="divider-chip blue">Enjeux</span>
+              <span class="divider-chip blue">Accroche</span>
+              <span class="divider-chip blue"> Contexte</span>
+              <span class="divider-chip blue"> Problématique</span>
+              <span class="divider-chip blue"> Solution Proposée</span>
+
+
             </div>
           </div>
         </div>
@@ -2494,27 +2487,27 @@
 
 
       <div class="slide" id="s_intro_content" onclick="goTo(3)"
-        style="left: 3300px; top: 1000px; width: 1400px; height: 800px; display: flex; flex-direction: column; padding: 55px 70px; box-sizing: border-box; gap: 0;">
+        style="left: 3300px; top: 1000px; width: 1400px; height: 800px; display: flex; flex-direction: row; padding: 50px 60px; box-sizing: border-box; gap: 40px; align-items: stretch;">
         <div class="slide-number">1.1</div>
 
-        <div
-          style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:18px; margin-bottom:36px;">
-          <div style="width:5px; height:40px; background:#1c4ed8; border-radius:4px; flex-shrink:0;"></div>
-          <div>
-            <h2 style="font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; color:#0f172a; margin:0;">
+        <!-- COLONNE GAUCHE : titre + 3 étapes -->
+        <div style="flex: 0 0 520px; display:flex; flex-direction:column; justify-content:flex-start; gap:0;">
+
+          <div
+            style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:18px; margin-bottom:28px;">
+            <div style="width:5px; height:40px; background:#1c4ed8; border-radius:4px; flex-shrink:0;"></div>
+            <h2 style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#0f172a; margin:0;">
               Introduction Générale
             </h2>
           </div>
-        </div>
 
-        <div style="display:flex; flex-direction:row; gap:24px; height:300px; align-items:stretch; margin: auto 0;">
-
+          <!-- Carte 1 : Accroche -->
           <div
-            style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; border-top:4px solid #1c4ed8; border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:16px;">
+            style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; border-top:4px solid #1c4ed8; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
             <div style="display:flex; align-items:center; gap:12px;">
               <div
-                style="width:40px; height:40px; background:#dbeafe; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1c4ed8" stroke-width="2"
+                style="width:36px; height:36px; background:#dbeafe; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1c4ed8" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="12" y1="8" x2="12" y2="12" />
@@ -2523,39 +2516,25 @@
               </div>
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#1c4ed8; letter-spacing:2px; text-transform:uppercase;">
-                  Étape 01
-                </div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#0f172a;">
-                  Accroche
-                </div>
+                  style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:#1c4ed8; letter-spacing:2px; text-transform:uppercase;">
+                  Étape 01</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; color:#0f172a;">
+                  Accroche</div>
               </div>
             </div>
-            <p style="font-family:'Open Sans',sans-serif; font-size:18px; color:#475569; line-height:1.65; margin:0;">
-              Les entreprises s'appuient sur des <strong style="color:#1c4ed8;">outils numériques</strong> pour gérer
-              leurs données et leurs processus.
-            </p>
-            <div style="margin-top:auto; background:#dbeafe; border-radius:10px; padding:12px 16px;">
-              <p style="font-family:'Open Sans',sans-serif; font-size:16px; color:#1e40af; margin:0; line-height:1.5;">
-                ⚠️ manque d’accès mobile en temps réel.
-              </p>
+            <div style="background:#dbeafe; border-radius:10px; padding:10px 14px;">
+              <p style="font-family:'Open Sans',sans-serif; font-size:15px; color:#1e40af; margin:0; line-height:1.5;">
+                ⚠️ Manque d'accès mobile en temps réel aux outils qualité.</p>
             </div>
           </div>
 
-          <div style="display:flex; align-items:center; justify-content:center; flex-shrink:0; align-self:center;">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#cbd5e1" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </div>
-
+          <!-- Carte 2 : Contexte & Problématique -->
           <div
-            style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; border-top:4px solid #c0392b; border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:16px;">
+            style="flex:1; background:#f8fafc; border:1px solid #e2e8f0; border-top:4px solid #c0392b; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
             <div style="display:flex; align-items:center; gap:12px;">
               <div
-                style="width:40px; height:40px; background:#fee2e2; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#c0392b" stroke-width="2"
+                style="width:36px; height:36px; background:#fee2e2; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#c0392b" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
                   <line x1="12" y1="9" x2="12" y2="13" />
@@ -2564,38 +2543,25 @@
               </div>
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#c0392b; letter-spacing:2px; text-transform:uppercase;">
-                  Étape 02
-                </div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#0f172a;">
-                  Contexte &amp; Problématique
-                </div>
+                  style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:#c0392b; letter-spacing:2px; text-transform:uppercase;">
+                  Étape 02</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; color:#0f172a;">
+                  Contexte &amp; Problématique</div>
               </div>
             </div>
-            <p style="font-family:'Open Sans',sans-serif; font-size:18px; color:#475569; line-height:1.65; margin:0;">
-              <strong style="color:#c0392b;">TQM Performance</strong> est difficile à utiliser sur mobile.
-            </p>
-            <div style="margin-top:auto; background:#fee2e2; border-radius:10px; padding:12px 16px;">
-              <p style="font-family:'Open Sans',sans-serif; font-size:16px; color:#991b1b; margin:0; line-height:1.5;">
-                ❌ Usage limité en déplacement.
-              </p>
+            <div style="background:#fee2e2; border-radius:10px; padding:10px 14px;">
+              <p style="font-family:'Open Sans',sans-serif; font-size:15px; color:#991b1b; margin:0; line-height:1.5;">❌
+                Usage limité en déplacement — processus papier, interface web contraignante.</p>
             </div>
           </div>
 
-          <div style="display:flex; align-items:center; justify-content:center; flex-shrink:0; align-self:center;">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#cbd5e1" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </div>
-
+          <!-- Carte 3 : Solution -->
           <div
-            style="flex:1; background:#f0fdf4; border:1px solid #bbf7d0; border-top:4px solid #22c55e; border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:16px;">
+            style="flex:1; background:#f0fdf4; border:1px solid #bbf7d0; border-top:4px solid #22c55e; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px;">
             <div style="display:flex; align-items:center; gap:12px;">
               <div
-                style="width:40px; height:40px; background:#dcfce7; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="2"
+                style="width:36px; height:36px; background:#dcfce7; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
@@ -2603,27 +2569,32 @@
               </div>
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#22c55e; letter-spacing:2px; text-transform:uppercase;">
-                  Étape 03
-                </div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#0f172a;">
-                  Solution Proposée
-                </div>
+                  style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:#22c55e; letter-spacing:2px; text-transform:uppercase;">
+                  Étape 03</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; color:#0f172a;">
+                  Solution Proposée</div>
               </div>
             </div>
-            <p style="font-family:'Open Sans',sans-serif; font-size:18px; color:#475569; line-height:1.65; margin:0;">
-              Développer une application mobile TQM Performance.
-            </p>
-            <div style="margin-top:auto; background:#dcfce7; border-radius:10px; padding:12px 16px;">
-              <p style="font-family:'Open Sans',sans-serif; font-size:16px; color:#15803d; margin:0; line-height:1.5;">
-                ✔ Simple<br>
-                ✔ Mobile<br>
-                ✔ Synchronisée &amp; offline
-              </p>
+            <div style="background:#dcfce7; border-radius:10px; padding:10px 14px;">
+              <p style="font-family:'Open Sans',sans-serif; font-size:15px; color:#15803d; margin:0; line-height:1.6;">✔
+                Simple &nbsp;·&nbsp; ✔ Mobile &nbsp;·&nbsp; ✔ Synchronisée &amp; offline</p>
             </div>
           </div>
 
         </div>
+
+        <!-- COLONNE DROITE : image illustrative -->
+        <div
+          style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative;">
+          <!-- Badge flottant haut -->
+          <img id="intro-illus"
+            src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781601402/Gemini_Generated_Image_yg6clwyg6clwyg6c_ucc120.png"
+            alt="TQM Performance : transition Web vers Mobile"
+            style="width:100%; object-fit:cover; border-radius:18px; border:2px solid #e2e8f0; box-shadow: 0 12px 32px rgba(15,23,42,0.10);">
+          <!-- Légende bas -->
+
+        </div>
+
       </div>
       <!-- =====================================================================
            INTERTITRE 02 : CADRE DU PROJET
@@ -2971,12 +2942,11 @@
           </div>
         </div>
 
+
         <div class="problematic-question-box">
           <div class="question-icon-wrapper">❓</div>
           <p class="question-text">
-            Comment concevoir une application mobile inspirée de <strong>TQM Performance</strong>, offrant une gestion
-            efficace des différents modules, une expérience utilisateur fluide et un fonctionnement autonome en mode
-            hors ligne ?
+            une application mobile inspirée de <strong>TQM Performance</strong>
           </p>
         </div>
       </div>
@@ -2999,11 +2969,7 @@
             <div class="sol-left-panel">
               <div class="sol-accent-line"></div>
               <h3>Une extension native et tout-terrain</h3>
-              <p class="sol-description">
-                Développement d'une application mobile complémentaire à la plateforme web <strong>TQM
-                  Performance</strong>,
-                optimisée pour les interventions sur le terrain et les situations de mobilité.
-              </p>
+
 
               <div class="sol-sync-card">
                 <div class="sync-icon-wrapper">
@@ -3014,8 +2980,7 @@
                 </div>
                 <div class="sync-text">
                   <h4>Synchronisation &amp; Cohérence</h4>
-                  <p>Exploitation des <strong>API préexistantes</strong> pour assurer un échange de données fiable,
-                    transparent et bidirectionnel avec le système central.</p>
+                  <p>Exploitation des <strong>API préexistantes</strong>
                 </div>
               </div>
 
@@ -3027,7 +2992,6 @@
                   </svg>
                   Mode Hors-Ligne Intégral
                 </span>
-                <span class="badge secure">✓ Sécurité HTTPS</span>
                 <span class="badge fluid">✦ Expérience UX Fluide</span>
               </div>
             </div>
@@ -3179,8 +3143,7 @@
 
           </div>
           <div class="slide-body" style="max-width:550px; margin-bottom:25px;">
-            Adoption d'une démarche agile itérative centrée sur la réactivité face aux besoins changeants. Le cycle XP
-            garantit des livraisons rapides et une amélioration continue de l'application TQM.
+            Adoption d'une démarche agile itérative
           </div>
           <div class="kpi-row">
             <span class="kpi-chip">Développement Itératif</span>
@@ -3563,11 +3526,7 @@
           </div>
         </div>
 
-        <div class="speaker-notes-banner">
-          <span class="notes-badge">Note</span>
-          <p class="notes-content">Ce module constitue le point d'entrée de l'application. Il assure la sécurité des
-            accès tout en améliorant le confort d'utilisation grâce à la mémorisation de la session.</p>
-        </div>
+
       </div>
 
 
@@ -3605,11 +3564,7 @@
           </div>
         </div>
 
-        <div class="speaker-notes-banner">
-          <span class="notes-badge">Note</span>
-          <p class="notes-content">Ce cœur fonctionnel garantit une autonomie complète à l'auditeur grâce à la gestion
-            locale des données, suivie d'une synchronisation transparente dès le retour du réseau.</p>
-        </div>
+
       </div>
 
 
@@ -3620,21 +3575,6 @@
         <div class="slide-number">4.5</div>
 
         <div class="module-layout-container">
-          <div class="module-text-side">
-            <div class="slide-label"><span class="text-blue">Module 3 :</span><br>Gestion des Actions</div>
-            <div style="width:50px; height:4px; background:#1c4ed8; margin:16px 0;"></div>
-            <div class="feature-list">
-              <div class="feature-item"><span>🛠️</span> Création, modification et suivi des actions</div>
-              <div class="feature-item"><span>👥</span> Gestion des responsables, objectifs et dates</div>
-              <div class="feature-item"><span>📎</span> Importation de pièces jointes liées aux actions</div>
-              <div class="feature-item"><span>🔄</span> Gestion hors-ligne, brouillons et publication</div>
-            </div>
-            <div class="results-box">
-              <div class="result-tag"><span class="trend-indicator">✓</span> Traçabilité des corrections</div>
-              <div class="result-tag"><span class="trend-indicator">✓</span> Statuts clairs (Évaluation / Suivi)</div>
-            </div>
-          </div>
-
           <div class="module-image-side">
             <div class="screenshot-wrapper">
               <div class="screenshot-container">
@@ -3642,20 +3582,30 @@
                 <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781301827/26_yk9uvl.png"
                   alt="Formulaire Action" class="showcase-image-v2">
               </div>
-              <div class="screenshot-container">
-                <span class="screen-label">ActionListScreen</span>
-                <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781301855/25_jm1jiq.png"
-                  alt="Liste Actions" class="showcase-image-v2">
-              </div>
             </div>
           </div>
+          <div class="module-text-side">
+            <div class="slide-label"><span class="text-blue">Module 3 :</span><br>Gestion des Actions</div>
+            <div style="width:50px; height:4px; background:#1c4ed8; margin:16px 0;"></div>
+            <div class="feature-list">
+              <div class="feature-item"><span>🛠️</span> Création</div>
+              <div class="feature-item"><span>👥</span> Réalisation</div>
+              <div class="feature-item"><span>📎</span> Suivi</div>
+              <div class="feature-item"><span>🔄</span> Evaluation</div>
+            </div>
+            <div class="results-box">
+              <div class="result-tag"><span class="trend-indicator">✓</span>Multi-Acteurs</div>
+              <div class="result-tag"><span class="trend-indicator">✓</span> Performance</div>
+              <div class="result-tag"><span class="trend-indicator">✓</span> Synchronisation</div>
+              <div class="result-tag"><span class="trend-indicator">✓</span> Sécurité</div>
+
+            </div>
+          </div>
+
+
         </div>
 
-        <div class="speaker-notes-banner">
-          <span class="notes-badge">Note</span>
-          <p class="notes-content">Ce module boucle le cycle d'amélioration continue. Il permet d'associer des preuves
-            matérielles aux actions et de gérer les flux d'évaluation, même hors-ligne.</p>
-        </div>
+
       </div>
 
 
@@ -3696,11 +3646,7 @@
           </div>
         </div>
 
-        <div class="speaker-notes-banner">
-          <span class="notes-badge">Note</span>
-          <p class="notes-content">L'intégration croisée des alertes temps réel et de la vue agenda offre une vision
-            temporelle des tâches, évitant les oublis des jalons critiques sur le terrain.</p>
-        </div>
+
       </div>
 
 
@@ -3760,7 +3706,7 @@
               Chapitre 05</div>
             <h2
               style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; color:#0f172a; margin:0; line-height:1.2;">
-              Tests, Validation &amp; Déploiement</h2>
+              Tests, Validation </h2>
           </div>
           <div
             style="margin-left:auto; background:#f0fdf4; border:1.5px solid #22c55e; border-radius:12px; padding:10px 22px; display:flex; align-items:center; gap:10px; flex-shrink:0;">
@@ -3773,7 +3719,7 @@
           </div>
         </div>
 
-        <div style="display:flex; flex-direction:row; gap:22px; height:480px; align-items:stretch;">
+        <div style="display:flex; flex-direction:row; gap:22px; height:400px; align-items:stretch;">
 
           <div
             style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #3b82f6; display:flex; flex-direction:column;">
@@ -3802,7 +3748,7 @@
                   <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
                     Tests fonctionnels</div>
                   <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:2px;">
-                    Vérification de chaque fonctionnalité métier</div>
+                    Fonctionnalité métier</div>
                 </div>
               </div>
               <div
@@ -3812,7 +3758,7 @@
                   <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
                     Tests de robustesse</div>
                   <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:2px;">
-                    Comportement face aux erreurs &amp; cas limites</div>
+                    Fiabilité</div>
                 </div>
               </div>
               <div
@@ -3849,107 +3795,28 @@
             </div>
             <div style="display:flex; flex-direction:column; gap:14px; flex:1;">
               <div
-                style="display:flex; align-items:flex-start; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
+                style="display:flex; align-items:center; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
                 <span style="font-size:22px; flex-shrink:0;">📱</span>
                 <div>
                   <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
                     Smartphones Android réels</div>
-                  <div
-                    style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:3px; line-height:1.5;">
-                    Tests sur appareils physiques, différentes résolutions &amp; versions Android</div>
+
                 </div>
               </div>
               <div
-                style="display:flex; align-items:flex-start; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
+                style="display:flex; align-items:center; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
                 <span style="font-size:22px; flex-shrink:0;">🔄</span>
                 <div>
                   <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
                     Scénarios variés</div>
-                  <div
-                    style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:3px; line-height:1.5;">
-                    Connexion active, perte de réseau, reprise offline, données volumineuses</div>
+
                 </div>
               </div>
-              <div
-                style="display:flex; align-items:flex-start; gap:12px; background:#fff7ed; border-radius:10px; padding:14px; flex:1;">
-                <span style="font-size:22px; flex-shrink:0;">🔁</span>
-                <div>
-                  <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#1e293b;">
-                    Campagnes itératives</div>
-                  <div
-                    style="font-family:'Open Sans',sans-serif; font-size:16px; color:#64748b; margin-top:3px; line-height:1.5;">
-                    Tests réalisés à chaque release selon la méthodologie XP</div>
-                </div>
-              </div>
+
             </div>
           </div>
-
-          <div
-            style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #22c55e; display:flex; flex-direction:column;">
-            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
-              <div
-                style="width:38px; height:38px; background:#dcfce7; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-              </div>
-              <div>
-                <div
-                  style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#22c55e; letter-spacing:1.5px; text-transform:uppercase;">
-                  Résultats</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
-                  Obtenus</div>
-              </div>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px;">
-              <div
-                style="display:flex; align-items:center; gap:10px; background:#f0fdf4; border-radius:10px; padding:12px 14px;">
-                <div style="width:8px; height:8px; background:#22c55e; border-radius:50%; flex-shrink:0;"></div>
-                <div style="font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600; color:#166534;">Tous
-                  les cas de test validés</div>
-              </div>
-              <div
-                style="display:flex; align-items:center; gap:10px; background:#f0fdf4; border-radius:10px; padding:12px 14px;">
-                <div style="width:8px; height:8px; background:#22c55e; border-radius:50%; flex-shrink:0;"></div>
-                <div style="font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600; color:#166534;">
-                  Aucune anomalie bloquante détectée</div>
-              </div>
-              <div
-                style="display:flex; align-items:center; gap:10px; background:#f0fdf4; border-radius:10px; padding:12px 14px;">
-                <div style="width:8px; height:8px; background:#22c55e; border-radius:50%; flex-shrink:0;"></div>
-                <div style="font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600; color:#166534;">
-                  Fonctionnement conforme aux besoins</div>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto;">
-              <div style="background:#0f172a; border-radius:10px; padding:14px; text-align:center;">
-                <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#22c55e;">90%
-                </div>
-                <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#94a3b8; margin-top:2px;">Cas
-                  validés</div>
-              </div>
-              <div style="background:#0f172a; border-radius:10px; padding:14px; text-align:center;">
-                <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#3b82f6;">10%
-                </div>
-                <div style="font-family:'Open Sans',sans-serif; font-size:16px; color:#94a3b8; margin-top:2px;">Anomalie
-                  bloquante</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="speaker-notes-banner"
-          style="position:relative; bottom:auto; left:auto; right:auto; margin-top:22px;">
-          <span class="notes-badge">Note</span>
-          <p class="notes-content">Plusieurs campagnes de tests ont été effectuées afin de vérifier la stabilité, la
-            fiabilité et la conformité de l'application aux exigences définies. Les tests ont couvert l'ensemble des
-            modules : authentification, audits, actions, alertes &amp; tableau de bord, en conditions réelles sur
-            appareil Android.</p>
         </div>
       </div>
-
 
 
       <!-- =====================================================================
@@ -3960,90 +3827,83 @@
 
         <div class="conclusion-container">
 
-          <!-- Bloc 1 : Valeur ajoutée de l'application -->
           <div class="conclusion-block">
             <div class="conclusion-title text-blue">Valeur Ajoutée de TQM Performance</div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#1c4ed8;"></div>
-              <div class="bullet-text"><strong>Richesse fonctionnelle :</strong> Formulaires dynamiques, génération
-                automatique de rapports PDF.</div>
+              <div class="bullet-text"><strong>Richesse fonctionnelle </strong></div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#1c4ed8;"></div>
-              <div class="bullet-text"><strong>Digitalisation complète :</strong> Suppression définitive du papier,
-                améliorant la traçabilité </div>
+              <div class="bullet-text"><strong>Digitalisation complète :</strong> Zéro papier et traçabilité totale.
+              </div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#1c4ed8;"></div>
-              <div class="bullet-text"><strong>Avantage décisif du Hors-ligne :</strong> Application pleinement
-                opérationnelle sur le terrain avec synchronisation automatique au rétablissement du réseau.</div>
+              <div class="bullet-text"><strong>Mode Hors-ligne :</strong> synchronisation
+                automatique.</div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#1c4ed8;"></div>
-              <div class="bullet-text"><strong>Ergonomie intuitive :</strong> Interface moderne facilitant la prise en
-                main et optimisant l'expérience utilisateur des équipes.</div>
+              <div class="bullet-text"><strong>Ergonomie intuitive :</strong> Interface moderne.
+              </div>
             </div>
           </div>
 
-          <!-- Bloc 2 : Bilan Technique & Méthodologique -->
           <div class="conclusion-block">
-            <div class="conclusion-title">Bilan du Projet (PFE)</div>
+            <div class="conclusion-title">Bilan du Projet</div>
 
             <div class="bullet-item">
               <div class="bullet-dot"></div>
-              <div class="bullet-text"><strong>Maîtrise technologique :</strong> Mise en pratique de React Native, d'une
-                architecture client-serveur robuste, d'un backend PHP et d'une base MySQL.</div>
+              <div class="bullet-text"><strong>Maîtrise technique : </strong>React Native</div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot"></div>
-              <div class="bullet-text"><strong>Rigueur méthodologique :</strong> Adoption de la méthode Extreme
-                Programming (XP) structurée autour d'itérations courtes et de tests continus.</div>
+              <div class="bullet-text"><strong>Méthodologie agile :</strong> (XP) avec itérations
+                courtes.</div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot"></div>
-              <div class="bullet-text"><strong>Défis surmontés :</strong> Résilience réseau, gestion fine du stockage
-                local et synchronisation des données.</div>
+              <div class="bullet-text"><strong>Défis surmontés :</strong> Stockage local et gestion de la résilience
+                réseau.</div>
+            </div>
+
+            <div class="bullet-item">
+              <div class="bullet-dot"></div>
+              <div class="bullet-text"><strong>Contrainte de déploiement :</strong> Test sur iOS nécessitant un
+                environnement macOS.</div>
             </div>
           </div>
 
-          <!-- Bloc 3 : Perspectives de l'application -->
           <div class="conclusion-block">
             <div class="conclusion-title" style="color:#c0392b;">Perspectives d'Évolution</div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#c0392b;"></div>
-              <div class="bullet-text"><strong>Réactivité accrue :</strong> Intégration de notifications push natives
-                pour alerter instantanément les utilisateurs des événements critiques.</div>
+              <div class="bullet-text"><strong>Réactivité :</strong> Intégration de notifications push en temps réel.
+              </div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#c0392b;"></div>
-              <div class="bullet-text"><strong>Analyse prédictive :</strong> Enrichissement des tableaux de bord pour
-                affiner le pilotage des indicateurs de performance (KPI).</div>
+              <div class="bullet-text"><strong>Analyse :</strong> Tableaux de bord avancés pour le pilotage des KPI.
+              </div>
             </div>
 
             <div class="bullet-item">
               <div class="bullet-dot" style="background:#c0392b;"></div>
-              <div class="bullet-text"><strong>Intelligence Artificielle :</strong> Exploitation d'algorithmes d'IA pour
-                la détection automatique des anomalies et recommandations d'actions.</div>
+              <div class="bullet-text"><strong>Intelligence Artificielle :</strong> Détection automatique des anomalies.
+              </div>
             </div>
           </div>
 
         </div>
-
-        <!-- Note de fin humaine et managériale discrète -->
-        <div class="speaker-notes-banner" style="bottom: 25px;">
-          <span class="notes-badge" style="background:#10b981;">Bilan humain</span>
-          <p class="notes-content">Ce stage au sein de KARRAY GROUP a transformé nos connaissances académiques en une
-            solution concrète, utile et évolutive.</p>
-        </div>
-
       </div>
 
 
@@ -4051,7 +3911,7 @@
         <div class="slide-number" style="font-size:64px; opacity:0.08;">06</div>
 
         <div
-          style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:16px; margin-bottom:28px;">
+          style="display:flex; align-items:center; gap:14px; border-bottom:1px solid #e2e8f0; padding-bottom:16px; margin-bottom:100px;">
           <div style="width:5px; height:38px; background:#c0392b; border-radius:4px; flex-shrink:0;"></div>
           <div>
             <div
@@ -4063,21 +3923,10 @@
               Déploiement de l'Application
             </h2>
           </div>
-          <div
-            style="margin-left:auto; background:#e0f2fe; border:1.5px solid #0284c7; border-radius:12px; padding:10px 22px; display:flex; align-items:center; gap:10px; flex-shrink:0;">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0284c7" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-              <line x1="12" y1="22.08" x2="12" y2="12" />
-            </svg>
-            <span style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#0369a1;">Build de
-              Production OK</span>
-          </div>
+
         </div>
 
-        <div style="display:flex; flex-direction:row; gap:22px; height:480px; align-items:stretch;">
+        <div style="display:flex; flex-direction:row; gap:22px; height:300px; align-items:stretch;">
 
           <div
             style="flex:1; background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:26px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04); border-top:4px solid #0284c7; display:flex; flex-direction:column;">
@@ -4096,28 +3945,18 @@
                 <div
                   style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#0284c7; letter-spacing:1px; text-transform:uppercase;">
                   Environnement</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">&amp;
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
+                  &amp;
                   Sécurisation</div>
               </div>
             </div>
 
             <div style="display:flex; flex-direction:column; gap:12px; flex:1;">
-              <div style="background:#f8fafc; border-radius:10px; padding:14px; border-left:3px solid #0284c7;">
-                <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#1e293b;">
-                  Architecture Client-Serveur</div>
-                <div
-                  style="font-family:'Open Sans',sans-serif; font-size:15px; color:#64748b; margin-top:2px; line-height:1.4;">
-                  <strong>Backend (PHP/MySQL) :</strong> Hébergé localement sur IP fixe au sein du réseau d'entreprise.
-                </div>
-              </div>
+
               <div style="background:#f8fafc; border-radius:10px; padding:14px; border-left:3px solid #f59e0b;">
-                <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#1e293b;">
+                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:#1e293b;">
                   Signature de l'APK (Keystore)</div>
-                <div
-                  style="font-family:'Open Sans',sans-serif; font-size:14px; color:#64748b; margin-top:2px; line-height:1.4;">
-                  Configuration sécurisée dans <code>build.gradle</code> avec certificat release pour garantir
-                  l'authenticité de l'application.
-                </div>
+
               </div>
             </div>
           </div>
@@ -4135,7 +3974,7 @@
               </div>
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#6366f1; letter-spacing:1px; text-transform:uppercase;">
+                  style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:#6366f1; letter-spacing:1px; text-transform:uppercase;">
                   Génération</div>
                 <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
                   Fichier APK</div>
@@ -4145,7 +3984,7 @@
             <div style="display:flex; flex-direction:column; gap:14px; flex:1;">
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#475569; margin-bottom:6px;">
+                  style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:#475569; margin-bottom:6px;">
                   Commande de compilation Gradle :</div>
                 <div
                   style="background:#0f172a; border-radius:8px; padding:12px 14px; font-family:'Courier New',Courier,monospace; font-size:14px; color:#38bdf8; font-weight:bold; border-left:4px solid #6366f1; word-break:break-all;">
@@ -4154,10 +3993,10 @@
               </div>
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#475569; margin-bottom:6px;">
+                  style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:#475569; margin-bottom:6px;">
                   Emplacement de l'artefact livré :</div>
                 <div
-                  style="background:#f1f5f9; border-radius:8px; padding:10px 12px; font-family:'Courier New',Courier,monospace; font-size:12.5px; color:#475569; border:1px dashed #cbd5e1; word-break:break-all;">
+                  style="background:#f1f5f9; border-radius:8px; padding:10px 12px; font-family:'Courier New',Courier,monospace; font-size:14px; color:#475569; border:1px dashed #cbd5e1; word-break:break-all;">
                   outputs/apk/release/app-release.apk
                 </div>
               </div>
@@ -4177,9 +4016,10 @@
               </div>
               <div>
                 <div
-                  style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:#22c55e; letter-spacing:1px; text-transform:uppercase;">
+                  style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:#22c55e; letter-spacing:1px; text-transform:uppercase;">
                   Validation</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">Sur
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0f172a;">
+                  Sur
                   Appareils</div>
               </div>
             </div>
@@ -4191,7 +4031,8 @@
                   <tr style="border-bottom:2px solid #e2e8f0; color:#475569; font-weight:bold;">
                     <th style="padding:10px 6px; font-family:'Montserrat',sans-serif;">Appareil</th>
                     <th style="padding:10px 6px; font-family:'Montserrat',sans-serif;">Version OS</th>
-                    <th style="padding:10px 6px; text-align:right; font-family:'Montserrat',sans-serif;">Résultat</th>
+                    <th style="padding:10px 6px; text-align:right; font-family:'Montserrat',sans-serif;">Résultat
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -4207,24 +4048,12 @@
                   </tr>
                 </tbody>
               </table>
-              <div
-                style="margin-top:16px; background:#f0fdf4; border-radius:8px; padding:10px 12px; border:1px solid #bbf7d0; font-size:13px; color:#166534; line-height:1.4;">
-                ✔ Installation et exécution de production fluides, confirmant la stabilité et la rétrocompatibilité du
-                build.
-              </div>
+
             </div>
           </div>
 
         </div>
-        <div class="speaker-notes-banner"
-          style="position:relative; bottom:auto; left:auto; right:auto; margin-top:22px;">
-          <span class="notes-badge">Note</span>
-          <p class="notes-content">
-            Pour finaliser le cycle de développement, nous avons procédé au build de production de l'application TQM
-            Performance. L'APK a été généré via Gradle Release, signé numériquement par Keystore et validé avec succès
-            sur un panel de smartphones physiques représentatifs du parc d'utilisateurs.
-          </p>
-        </div>
+
       </div>
 
       <!-- remerciment -->
@@ -4237,7 +4066,7 @@
           <div class="glow-orb orb-2"></div>
 
           <div class="final-card">
-            <h1 class="thank-you-title">Merci pour votre attention</h1>
+            <h1 class="thank-you-title">Merci de votre attention</h1>
             <div class="separator"></div>
             <p class="thank-you-subtitle">Fin de la présentation</p>
           </div>
@@ -4326,19 +4155,24 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781301855/25_jm1jiq.png" alt="Action List">
+            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781564460/25_whnybe.png" alt="Action List">
             <span class="gallery-item-label">ActionListScreen</span>
-            <span class="gallery-item-desc">Liste des actions avec statuts</span>
+            <span class="gallery-item-desc">Liste des actions</span>
           </div>
           <div class="gallery-item">
-            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781301827/26_yk9uvl.png" alt="Action Form">
+            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781564459/35_wzrsum.png" alt="Action Form">
             <span class="gallery-item-label">ActionFormScreen</span>
-            <span class="gallery-item-desc">Création &amp; modification d'une action</span>
+            <span class="gallery-item-desc">Réaliser une action</span>
           </div>
           <div class="gallery-item">
-            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781301855/25_jm1jiq.png" alt="Action Detail">
-            <span class="gallery-item-label">ActionDetailScreen</span>
-            <span class="gallery-item-desc">Pièces jointes &amp; suivi de progression</span>
+            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781564458/36_delxbf.png" alt="Action Detail">
+            <span class="gallery-item-label">ActionFormScreen</span>
+            <span class="gallery-item-desc">Suivre une action</span>
+          </div>
+          <div class="gallery-item">
+            <img src="https://res.cloudinary.com/fatmakmiha/image/upload/v1781564457/37_guommv.png" alt="Action Detail">
+            <span class="gallery-item-label">ActionFormScreen</span>
+            <span class="gallery-item-desc">Evaluer une action</span>
           </div>
         </div>
       </div>
@@ -4419,9 +4253,11 @@
         <div class="divider-premium-layout">
           <div class="divider-massive-number">05</div>
           <div class="divider-text-stack">
-            <h1 class="divider-main-title"><span class="text-gradient-red"> Tests, Validation et Déploiement</span></h1>
+            <h1 class="divider-main-title"><span class="text-gradient-red"> Tests, Validation et Déploiement</span>
+            </h1>
             <p class="divider-refined-subtitle">
-              Assurer le bon fonctionnement, la qualité et la mise en service de l'application mobile TQM Performance.
+              Assurer le bon fonctionnement, la qualité et la mise en service de l'application mobile TQM
+              Performance.
             </p>
             <div class="divider-chips">
               <span class="divider-chip green">100% validés</span>
@@ -4486,7 +4322,6 @@
       { id: 's_test', left: 3000, top: 1000, w: 1600, h: 900 },  //  24 – § Tests, Validation et Déploiement
       { id: 's_tests', left: 3100, top: 4800, w: 1600, h: 900 },  //  24 – § Tests, Validation et Déploiement
       { id: 's_deploy', left: 4100, top: 3800, w: 1600, h: 900 },  //  24 – § Tests, Validation et Déploiement
-
       { id: 's11', left: 3200, top: 4300, w: 1200, h: 650 },  // 25 – Conclusion
       { id: 'slide-conclusion', left: 6400, top: 3600, w: 1024, h: 576 },
     ];
